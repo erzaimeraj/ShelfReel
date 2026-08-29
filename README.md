@@ -30,7 +30,7 @@ The AI copywriting is constrained by design: it can only rephrase and elevate cl
 
 - Node.js 18+
 - A Google Gemini API key (free tier) — get one at https://aistudio.google.com/apikey
-- A Supabase project (or use the pre-provisioned one in Bolt)
+- A Supabase project
 
 ### Installation
 
@@ -54,7 +54,7 @@ cp .env.example .env
 
 ### Database setup
 
-The database schema and storage bucket are applied via Supabase migrations. In Bolt, these are handled automatically. If self-hosting, run the SQL from the migration files against your Supabase project:
+The database schema and storage bucket are applied via Supabase migrations.If self-hosting, run the SQL from the migration files against your Supabase project:
 
 1. Create the `showcases` table (see schema in the migration).
 2. Create the `showcase-images` storage bucket (public).
@@ -62,7 +62,7 @@ The database schema and storage bucket are applied via Supabase migrations. In B
 
 ### Deploy the edge function
 
-The `generate-showcase` edge function handles Gemini API calls. In Bolt, it's deployed via the Supabase MCP tools. If self-hosting:
+The `generate-showcase` edge function handles Gemini API calls.
 
 ```bash
 supabase functions deploy generate-showcase --no-verify-jwt
